@@ -10,8 +10,8 @@ const Marquees = () => {
 
 
   return (
-    <div className='my-32 pt-10'>
-      {data.map((elem,i)=><Marquee key={i} data ={elem}/>)}
+    <div className='my-32 pt-10 w-full relative overflow-hidden'>
+      {data.map((elem,i)=>(i===1) ? <Marquee key={i} data ={elem.reverse()} start={"-100%"} end={"0%"}/> : <Marquee key={i} data ={elem} start={"0%"} end={"-100%"}/>)}
     </div>
   )
 }

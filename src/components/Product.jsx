@@ -1,9 +1,15 @@
 import React from 'react'
 import Button from '../components/Button'
 
-const Product = ({data}) => {
+const Product = ({index,data,mover}) => {
+
+  const animate = () => {
+    mover(index)
+  }
+
+
   return (
-    <div className={`flex items-center justify-between py-6 px-52 hover:bg-gradient-to-r from-blue-800 to-blue-700`}>
+    <div onMouseEnter={animate} className={`flex items-center h-[18rem] justify-between px-52 hover:bg-gradient-to-r from-blue-800 to-blue-700`}>
       <h1 className='text-5xl capitalize'>{data.title}</h1>
       <div className='w-1/4'>
       <p className='text-sm'>{data.description}</p>
